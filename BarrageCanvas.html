@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <link rel="stylesheet" type="text/css" href="css/barrage.css" />
+    <title></title>
+</head>
+<body>
+    <canvas id="canvas" style=""></canvas>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.barrage.js"></script>
+    <script type="text/javascript">
+        var b = null,num = 1;
+        $(function(){
+            b = new Barrager($('#canvas'),"row");
+            b.init();
+            setInterval(function(){
+                b.putMsg([
+                    {"msgContent": "Hello There", "head": "images/0.jpg", "name": "John" + (num++)}
+                ]);
+            },2000);
+        });
+
+    </script>
+</body>
+</html>
